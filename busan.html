@@ -23,27 +23,32 @@
     ul{margin-top: 140;}
     ul#all li{display: block; margin-left: 78; margin-bottom: 30;}
 
+    #priority1{z-index: 1;}
+    #priority2{z-index: 0;}
+
 </style>
 </head>
 
 <body>
-    <div style="background-color: black; width:1366; height:70; position: absolute; left:0; top:10">
-    </div>  <!-- 맨 위 띠 형성 -->
+    <div id=priority1 style="background-color: black; width:1366; height:70; position: fixed; left:0; top:10">
+    <!-- 맨 위 띠 형성 -->
 
-    <div class=logo style="position: absolute; left:120px; top:30px; color:white">BUSAN</div>
-    <!-- 로고 텍스트 -->
+        <div class=logo style="position: fixed; left:120px; top:30px; color:white">BUSAN</div>
+        <!-- 로고 텍스트 -->
 
-    <a href="index.html">
-    <img src="images/back.png" style="position: absolute; left:660; top:17px; width:50; height:50;">
-    <!-- back버튼 -->
+        <a href="index.html">
+        <img src="images/back.png" style="position: fixed; left:660; top:17px; width:50; height:50;">
+        </a>
+        <!-- back버튼 -->
 
-    <div style="position:absolute; left:900px; top:40px; word-spacing: 50px;">
-        <a href="daegu.html">Daegu</a>
-        <a href="busan.html" style="color:orange">Busan</a>
-        <a href="yeosu.html">Yeosu</a>
-        <a href="jeonju.html">Jeonju</a>
-    </div>
+        <div style="position:fixed; left:900px; top:40px; word-spacing: 50px;">
+            <a href="daegu.html">Daegu</a>
+            <a href="busan.html" style="color:orange">Busan</a>
+            <a href="yeosu.html">Yeosu</a>
+            <a href="jeonju.html">Jeonju</a>
+        </div>
     <!-- 메뉴 형성 -->
+    </div>
 
     <ul id=all>
 
