@@ -1,0 +1,84 @@
+<html><head><title>JMpage</title>
+<script language="javascript">
+    function checkInfo()
+    {
+        txtPw = document.frm.pw.value
+        txtId = document.frm.id.value
+        if(txtPw=="1234" && txtId=="travel")
+            document.location.href="page1.html"
+        else
+        {
+            alert("회원 정보가 일치하지 않습니다. 다시 확인해 주세요.")
+            document.frm.pw.value = ""
+            document.frm.id.value = ""
+        }
+    }
+</script>
+
+<script>
+    function message()
+    {
+        alert("개인 홈페이지 입니다. 정보를 입력해주세요. (Chrome 환경에 적합한 페이지 입니다.)")
+    }
+</script>
+
+<style>
+    @font-face
+    {
+        font-family: 'font';
+        src:url('조선일보명조.ttf');
+    }
+    body{background-color: lightgray; width:1300px;}
+
+    div#main
+    {
+        width:400; height:550;
+        font-family: 'font';
+        position: relative; left:470; top:40;
+    }
+    div#ID
+    {
+        position: absolute; left:123; top:400;
+        font-family: "조선일보명조";
+    }
+    div#PASS
+    {
+        position: absolute; left:58; top:445;
+        font-family: "조선일보명조";
+    }
+    div#LOGIN
+    {
+        position: absolute; left:185; top:490;
+    }
+
+    .logo{font-family: Arial,'Times New Roman', Times, Helvetica, sans-serif; font-weight: bolder;font-size:30px; color:black;}
+
+</style>
+</head>
+<body onload="message()">
+    <div id=main style="background-color:white;">
+        <img src="images/logo.png" style="position: absolute; left:120; top:15px; width:50; height:50;">
+    <!-- 로고 -->
+        <div class=logo style="position: absolute; left:180px; top:30px">Yang JM</div>
+    <!-- 로고 텍스트 -->
+        <img src="images/mainBack1.jpg" style="width:380; height:230; margin-top:80; margin-left: 10;">
+    <!-- 이미지 생성 -->
+        <div style="font-family: 조선일보명조; font-size:25px; margin-left:95; margin-top:30;">
+        개인 홈페이지 입니다</div>
+
+        <form name=frm>
+
+        <div id=ID>
+        ID: <input type="text" size=20 name=id></div>
+
+        <div id=PASS>
+        PASSWORD: <input type="password" size=20 name=pw></div>
+
+        <div id="LOGIN">
+        <input type="button" value="Login" onclick="checkInfo()"></div>
+
+        </form>
+    </div>
+</body>
+</html>
+
