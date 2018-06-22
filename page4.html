@@ -1,0 +1,237 @@
+<html>
+<head> <title>JMpage</title>
+<script language="javascript">
+    var remote;
+    function openWin()
+    {
+      win = window.open("notice.html","", "width=300 height=500 left=700 top=50 directories=no");
+      setTimeout("closeWin()", 3000);
+    }
+    function closeWin()
+    {
+      if(win!=null) win.close()
+    }
+</script>
+
+<script language="javascript">
+    function site()
+    {
+        document.frm1.text.value = document.frm1.url.value;
+    }
+    function go()
+    {
+        document.location.href = document.frm1.website.value;
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#website') .val("http://www.");
+    });
+</script>
+
+<script language="javascript">
+    function dayCount()
+    {
+        var first = new Date(2016, 12, 22);
+        var now = new Date();
+        var last = now - first;
+        var result = Math.round(last/(24*60*60*1000));
+        document.frm2.text.value = result;
+    }
+</script>
+
+<script>
+    function start()
+    {
+        openWin();
+        dayCount();
+    }
+</script>
+
+<style>
+    * { margin: 0; padding: 0; }
+    body{background-color: white;}
+    li { list-style: none; }
+    a { text-decoration: none; }
+    img { border: 0; }
+</style>
+
+<style>
+    @media screen and (min-width: 1300px){
+        ::-webkit-scrollbar
+        {
+            display: none;
+        }
+    }
+</style>
+
+<style>
+    a:link{color:black; text-decoration: none; font-weight: bold;}
+    a:visited{color:black; text-decoration: underline; font-weight: bold;}
+    a:active{color:black; text-decoration: none; font-weight: bold;}
+    a:hover{color:black; text-decoration: underline; font-weight: bold;}
+</style>
+
+<style>
+    #main_header
+    {
+        position: relative;
+        width: 1250px; height:70; margin: 0 auto;
+    }
+    #main_header > a
+    {
+        position:absolute;
+    }
+    #main_header > #main_menu
+    {
+        position:absolute; right:50; top:40px; word-spacing: 50px;
+    }
+    #main_header > #logo
+    {font-family: Arial,'Times New Roman', Times, Helvetica, sans-serif; font-weight: bolder;font-size:30px; color:black;
+        position: absolute; left:160px; top:30px
+    }
+    #main_header > #logoimage
+    {
+        position: absolute; left:100; top:15px; width:50; height:50;
+    }
+</style>
+
+<style>
+    #content
+    {
+        /* 중앙 정렬 */
+        width: 1200px; height: 1000; margin: 0 auto;
+        position: relative;
+        /* 수평 레이아웃 구성 */
+        overflow: hidden;
+    }
+    #content #recommand{position: absolute; right: 20; top:100;}
+    #content #profile{position: absolute; left:350; top:250; width:50%;}
+</style>
+
+<style>
+    #profile > #myimage
+    {
+      width: 150; height: 150; float: left; position: absolute;
+    }
+    #profile > #mytext
+    {
+      position: absolute; left: 170; top: 30;
+    }
+    #mytext tr td{float: left;}
+</style>
+
+<style>
+    #footer
+    {
+        width:85%; height:25; background-color: gray; font-size:12px; font-family: arial; text-align: center; color:black; padding: 7px 0px 0px 0px; position: relative; bottom: 0px; left:1%;
+        margin: 0 auto;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        $(canvas).on({
+            mousedown: function (event) {
+                var position = $(this).offset();
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+                context.beginPath();
+                context.moveTo(x, y);
+            },
+            mouseup: function (event) {
+                var position = $(this).offset();
+                var x = event.pageX - position.left;
+                var y = event.pageY - position.top;
+                context.lineTo(x, y);
+                context.stroke();
+            }
+        });
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#game').click(function()
+        {
+            $('#game').animate({left:200}, 1000);
+            $('#game').animate({top:800}, 1000);
+            $('#game').animate({left:20}, 1000);
+            $('#game').animate({top:50}, 1000);
+        });
+    });
+</script>
+
+</head>
+<body onload="start()">
+    <header id=main_header>
+        <img src="images/logo.png" id = logoimage>
+    <!-- 로고 -->
+         <div id=logo>Yang JM</div>
+    <!-- 로고 텍스트 -->
+        <div id = main_menu>
+        <a href="page1.html">Home</a>
+        <a href="page2.html">Domestic</a>
+        <a href="page3.html">Abroad</a>
+        <a href="page4.html" style="color:orange"S>Profile</a>
+        </div>
+    </header>  <!-- 맨 위 띠 형성 -->
+
+<!--content-->
+    <div id = content>
+        <div style="position: absolute; width:100px; height:100px;left:20px; top:50px; background-color: red; border-radius: 50px; text-align: center; color:white;" id=game>눌러</div>
+
+        <div id = recommand>
+            <form name=frm1>
+                <select name=url onchange="site()" style="height:23px;">
+                    <option selected value="">추천사이트</option>
+                    <option value="http://www.clickseo.com">클릭서닷컴</option>
+                    <option value="http://www.naver.com">네이버</option>
+                    <option value="http://www.google.com">구글</option>
+                </select>
+                <input type="text" size=30 name=text style="height: 22px; padding-top: 4px;" id=website>
+                <input type="button" value="이동" onclick="go()">
+            </form>
+        </div>
+
+        <div id = profile>
+            <img src="images/man.png" id = myimage>
+
+            <table id = mytext>
+                <tr>
+                    <td>이름: Yang</td>
+               </tr>
+               <tr>
+                   <td>나이: 26</td>
+              </tr>
+              <tr>
+                  <td>학교: 광운대학교</td>
+              </tr>
+              <tr>
+                <td>
+                    <form name=frm2>
+                        오늘은 제대한지
+                        <input type="text" name="text" size=1 style="text-align: right;">일째 되는 날
+                    </form>
+                </td>
+              </tr>
+            </table>
+        </div>
+
+        <p style="font-size:20px; position: relative; top:500px; left:100px; margin-top: 50px;">그림을 그리고 제출해주세요</p>
+        <canvas id="canvas" width="1000" height="300" style="border: 3px solid black; position: relative; left:100px; top:500px;"></canvas>
+        <input type="submit" value="제출" onclick="alert('확인되었습니다.')" style="position: absolute; left:1050px; top:910px; width:60px; height:30px;">
+    </div>
+
+    <div id = footer>
+    주소: 서울시 **구 **동 **아파트 **-** | TEL: 02-***-2283 | E-Mail: ****@naver.com
+    </div>
+    <!-- 가장 아랫줄 형성 -->
+
+</body>
+</html>

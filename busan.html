@@ -1,0 +1,197 @@
+<html>
+<head> <title>JMpage</title>
+<style>
+    * { margin: 0; padding: 0; }
+    body
+    {background-image: url(images/doBack.jpg); background-repeat: no-repeat; background-size: 100% 800px; background-attachment: fixed;
+    }
+    li { list-style: none; }
+    a { text-decoration: none; }
+    img { border: 0; }
+</style>
+
+<style>
+    @media screen and (min-width: 1300px){
+        ::-webkit-scrollbar
+        {
+            display: none;
+        }
+    }
+</style>
+
+<style>
+    a:link{color:black; text-decoration: none; font-weight: bold;}
+    a:visited{color:black; text-decoration: underline; font-weight: bold}
+    a:active{color:black; text-decoration: none; font-weight: bold}
+    a:hover{color:black; text-decoration: underline; font-weight: bold}
+</style>
+
+<style>
+    #main_header
+    {
+        margin: 0 auto;
+        background-color: black; width:100%; height:70;position: absolute; left:0; top:10
+    }
+    #main_header > a
+    {
+        position:absolute;
+    }
+    #main_header > #main_menu
+    {
+        position:absolute; left:900px; top:30px; word-spacing: 50px;
+    }
+    #main_menu > a {color:white;}
+    #main_header > #logo
+    {font-family: Arial,'Times New Roman', Times, Helvetica, sans-serif; font-weight: bolder;font-size:30px;
+        position: absolute; left:120px; top:22px; color:white;
+    }
+    #main_header > a > #back
+    {
+        position: absolute; left:660; top:10px; width:50; height:50;
+    }
+</style>
+
+<style>
+    ul{margin-top: 200;}
+    ul#all li{display: block; margin-left: 200; margin-bottom: 80;}
+    ul#all li #box
+    {
+        width:1100px; height:400; background-color: black; opacity: 1; color:white;
+    }
+    #box img{float: left;}
+    #image_info{position:relative; left:50px; top:50px;}
+    #image_info li{font-size: 20px;}
+
+    .priority1{z-index: 1;}
+    .priority2{z-index: 0;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#box > img").css({
+            width:600, height:400
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#side').fadeOut(1);
+        $('#toggle').click(function () {
+            $('#side').fadeToggle();
+        });
+    });
+</script>
+
+<style type="text/css">
+    #subcontent{width:100; left:0; bottom: 100px; position:fixed;}
+    #subcontent #side{padding:15;}
+    #subcontent #side li{display: block; float: left; text-align: center; width:100px; background-color: black; margin-bottom: 1px; padding:10px 1px 10px 1px; color:white;}
+    #subcontent #side li a {text-decoration: none;}
+    #subcontent #side li:hover{background-color: orange;}
+    #toggle{position:fixed; border:1px solid; border-color: orange; width:100; height:50; background-color: black; color:white; font-size:20; bottom: 0px;}
+</style>
+
+</head>
+<body>
+    <div class=priority1 id = main_header>
+    <!-- 맨 위 띠 형성 -->
+
+        <div id=logo>DAEGU</div>
+        <!-- 로고 텍스트 -->
+
+        <a href="page1.html">
+        <img src="images/back.png" id = back>
+        </a>
+        <!-- back버튼 -->
+
+        <div id = main_menu>
+            <a href="daegu.html">Daegu</a>
+            <a href="busan.html" style="color:orange">Busan</a>
+            <a href="yeosu.html">Yeosu</a>
+            <a href="jeonju.html">Jeonju</a>
+        </div>
+    <!-- 메뉴 형성 -->
+    </div>
+
+<!--content-->
+    <ul id=all>
+        <li>
+            <div id = box>
+                <img src="images/busan/1.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div id = box>
+                <img src="images/busan/2.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div id = box>
+                <img src="images/busan/3.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div id = box>
+                <img src="images/busan/4.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div id = box>
+                <img src="images/busan/5.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div id = box>
+                <img src="images/busan/6.jpg">
+                <ul id=image_info>
+                    <li>장소:</li>
+                    <li>설명1:</li>
+                    <li>설명2:</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+
+    <div id=subcontent name = side>
+        <ul id=side>
+            <a href="daegu.html"><li>Daegu</li></a>
+            <a href="busan.html"><li>Busan</li></a>
+            <a href="yeosu.html"><li>Yeosu</li></a>
+            <a href="jeonju.html"><li>Jeonju</li></a>
+            <a href="taiwan.html"><li>Taiwan</li></a>
+            <a href="hongkong.html"><li>Hongkong</li></a>
+            <a href="macau.html"><li>Macau</li></a>
+        </ul>
+    </div>
+    <button id=toggle>Change</button>
+
+</body>
+</html>
