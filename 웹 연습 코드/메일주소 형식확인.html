@@ -1,0 +1,32 @@
+<html><head><title>practice</title>
+<script language="javascript">
+    function chkMail()
+    {
+        var txtMail=document.frm.email.value;
+        var result=txtMail.indexOf("@");
+        if(result==-1)
+            alert("메일이 아님");
+        else
+            alert("가입");
+    }
+</script>
+</head>
+<body>
+    <form name=frm>
+    <table align="center" width=500 border=2 cellspacing="2" cellpadding="15" bordercolor=#eeeeee bgcolor="#ffffff">
+
+    <tr>
+    <td align="center" bgcolor="#e7b6e7">
+    <input type="text" name=email size=25 value="소식지">
+    <input type="image" border=0 src="1.jpg" align="absmiddle" onclick="chkMail()">
+    <br><br>
+    <input type="radio" name=chk0k value=1 checked>가입 &nbsp; &nbsp; &nbsp;
+    <input type="radio" name=chk0k value=2 >해지 <br><br>
+    "@"가 빠진 이메일 주소를 입력한 다음 "OK"를 눌러봐
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+</body>

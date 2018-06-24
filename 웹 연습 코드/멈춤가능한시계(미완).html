@@ -1,0 +1,46 @@
+<html><head><title>practice</title>
+<script language="javascript">
+    function startWatch()
+    {
+        var now = new Date()
+
+        var si = now.getHours()
+
+        if(si>12) si="오후" + (si-12)
+        else if(si==0) si="오전" + (si+12)
+        else if(si==12) si="오후" + si
+        else si="오전" + si
+
+        if(si<10) si=" " + si
+
+        var bun = now.getMinutes()
+        if(bud<10) bun = "0" + bun
+
+        var cho = now.getSeconds()
+        if(cho<10) cho = "0" + cho
+
+        clock = "현재시각은"+si+"시"+bun+"분"+cho+"초 입니다"
+
+        document.frm.clock.value = clock
+        window.defaultStatus = clock
+        document.title = clock
+        timer = setTimeout("startWatch()", 1000)
+    }
+
+    function stopWatch()
+    {
+        clearTimeout(timer)
+    }
+</script>
+</head>
+<body onload="startWatch()" onunload="stopWatch()">
+    <center>
+    <form name=frm>
+        <input type=text size=35 name=clock><br>
+        <input type=button value=작동 onclick="startWatch()">
+        <input type=button value=멈춤 onclick="stopWatch()">
+</form>
+</center>
+</body>
+</html>
+

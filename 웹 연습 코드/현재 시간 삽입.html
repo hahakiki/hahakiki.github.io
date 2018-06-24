@@ -1,0 +1,31 @@
+<html><head><title>practice</title>
+<script language="javascript">
+    function startWatch()
+    {
+        sigan = new Date()
+
+        si = sigan.getHours()
+        bun = sigan.getMinutes()
+        cho = sigan.getSeconds()
+
+        clock = si + "시" + bun + "분" + cho + "초"
+        frm1.clock.value = clock
+
+        window.defaultStatus = clock
+        window.document.title = clock
+
+        setTimeout("startWatch()", 1000)
+    }
+</script>
+</head>
+
+<body onload="startWatch()" leftmargin=0 topmargin=0>
+    <br><br>
+
+    <p align=center>
+        <form name="frm1">
+        현재시간 <input type="text" name=clock size=15>
+    </form>
+</p>
+</body>
+</html>

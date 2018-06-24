@@ -1,0 +1,35 @@
+<html>
+<head><title>practice</title>
+    <script language="javascript">
+    function pwChk()
+    {
+        txtPw = document.frm1.pw.value
+        if(txtPw==1234)
+            document.location.href = "http://www.naver.com"
+        else
+            alert("회원이 아님")
+    }
+    function inputChk()
+    {
+        txtPw = isNaN(document.frm1.pw.value)
+        if(txtPw==true)
+        {
+            document.frm1.pw.value = ""
+            alert("숫자가 아님")
+        }
+    }
+</script>
+</head>
+
+<body text=black bgcolor="white" leftmargin=0 topmargin=0>
+    <table width=350 border=0>
+        <tr><td align="right"><br>
+
+            <form name=frm1>
+            비밀번호: <input type="password" size=12 name=pw onkeydown="inputChk()">
+            <input type="button" value="login" onclick="pwChk()">
+        </form>
+    </td></tr>
+</table>
+</body>
+</html>

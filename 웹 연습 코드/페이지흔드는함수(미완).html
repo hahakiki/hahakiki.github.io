@@ -1,0 +1,31 @@
+<html><head><title>practice</title>
+    <script language="javascript">
+    var remote;
+    function openwin()
+    {
+        remote=window.open("calculator.html", "", "width=250 height=385 left=100 top=100 directories=no");
+        setTimeout("movewin()", 3000);
+    }
+    position=0;
+    function movewin()
+    {
+        if(position>15)
+            return;
+        remote.moveBy(10,10);
+        position=position+1;
+        setTimeout("movewin2()", 50);
+    }
+    function movewin2()
+    {
+        remote.moveBy(10, -10);
+        setTimeout("movewin()", 50);
+    }
+</script>
+</head>
+<body text=#666666 onload="setTimeout('openwin()', 3000">
+    <center>
+        <img src="images/1.jpg" width=152 height=223 border=1 hspace=10><br>
+    </center>
+</body>
+</html>
+

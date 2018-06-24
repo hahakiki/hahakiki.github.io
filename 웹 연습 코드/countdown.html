@@ -1,0 +1,22 @@
+<html><head><title>practice</title>
+    <style>
+    a, input{color:white; text-decoration: none}
+    input{border:0px solid green; background-color: transparent; text-align: center}
+</style>
+<script language="javascript">
+    n=10
+    function addNum()
+    {
+        if(n==0) location.href="http://www.naver.com"
+        frm1.num.value = n
+        n = n-1
+        setTimeout("addNum()", 1000)
+    }
+</script>
+</head>
+<body onload="addNum()" text=white bgcolor="black" leftmargin=0 topmargin=0>
+    <br>
+    <form name="frm1">
+        <input type=text name=num size=2>초 뒤에 접속</form>
+    </body>
+    </html>

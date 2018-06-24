@@ -1,0 +1,25 @@
+<html>
+<head><title>practice</title>
+    <script language="javascript">
+    var w = window.screen.width
+    var h = window.screen.height
+    if(w!=800 && h!=600)
+        result=confirm(w+"*"+h+"입니다. 설정합니다")
+    if(result==true)
+        window.resizeTo(800,600)
+</script>
+</head>
+
+<body text=black leftmargin=0 topmargin=0>
+<table width=350 border=0>
+    <tr><td align="right"><br>
+        <script language="javascript">
+        var msg = "800X600이 적합함"
+        document.write("<br><center><fron size=2 color=white>");
+        document.write(w + "*" + h + "사용중");
+        document.write(msg + "<br>");
+    </script>
+</td></tr>
+</table>
+</body>
+</html>

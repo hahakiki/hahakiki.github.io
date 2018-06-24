@@ -1,0 +1,23 @@
+<html><head><title>practice</title>
+    <script language="javascript">
+    function dayCount()
+    {
+        var first=new Date("September 4, 2009");
+        var now=new Date();
+        var last = now-first;
+        var result=Math.round(last/(24*60*60*1000));
+        document.frm1.text1.value = result;
+    }
+</script>
+</head>
+<body onload="dayCount()" leftmargin=0 topmargin=0>
+    <br><br>
+    <p align="center">
+    <form name="frm1">
+        붥 <br>
+    <input type=text name=text1 size5>일째
+</form>
+</p>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<html><head><title>practice</title></head>
+<script>
+    function Go(listBox)
+    {
+        if(listBox.selectedIndex != 0)
+            location=listBox.options(listBox.selectedIndex).value;
+    }
+</script>
+<body>
+    <form name=frm>
+    <table align="center" width=500 border=2 cellspacing="2" cellpadding="15" bordercolor=#eeeeee bgcolor="#ffffff">
+    <tr>
+        <td align="center" bgcolor="#79deff">
+            <font color=#ffffff>*</font>
+            선택 및 주소입력 이동
+            <font color=#ffffff>*</font>
+            <br><br>
+            <select name="url" onChange="Go(this)">
+                <option selected>쿨사이트</option>
+                <option value="http://www.naver.com">네이버</option>
+            </select>
+
+            <input type="text" name=site size=30 value="http://">
+
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

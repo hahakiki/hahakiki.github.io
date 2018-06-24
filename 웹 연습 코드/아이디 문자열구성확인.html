@@ -1,0 +1,32 @@
+<html><head><title>practice</title>
+<script language="javascript">
+    function checkId()
+    {
+        var str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var strId=document.frm1.id.value;
+        var lenId=strId.length;
+        var check=true;
+
+        for(var i=0; i<lenId; i++)
+        {
+            check=str.indexOf(strId.charAt(i));
+            if(check==-1) break;
+        }
+        if(check==-1) alert("영문과 숫자만 입력하세요");
+        else alert("Check!");
+
+        frm1.id.select()
+    }
+</script>
+</head>
+
+<body onload="frm1.id.focus()" leftmargin=0 topmargin=0>
+<br><br>
+<center>
+    <form name=frm1>
+    아이디: <input type="text" size=12 name=id>
+    <input type=button value="login" onClick="checkId()">
+</form>
+</center>
+</body>
+</html>
